@@ -30,11 +30,13 @@ include '../view/header.php';
     <form action="ajout-sport" method="post">
         <div
             <select name="sport" id="sport" >
-                <option value="" disabled selected hidden> Choisissez votre sport</option>
+            <option value="" disabled selected hidden> Choisissez votre sport</option>
 
-            <?php if (!empty $sports){
-                    foreach ($sport as $port) { }?>
-                <option value="tennis">Tennis</option>
+            <?php
+            foreach ($sport as $sport) { ?>
+                <option><?php echo $sport ?></option>
+            <?php } ?>
+
             </select>
         </div>
 
