@@ -5,23 +5,23 @@ include '../view/header.php';
 <form action="ajout-user.php" method="post">
 
     <div>
-        <label for="name">Entrez votre Pseudonyme: </label>
-        <input type="text" name="pseudo" id="pseudo" placeholder="Pseudonyme" required>
+        <label for="prenom">Entrez votre Prénom: </label>
+        <input type="text" name="prenom" id="prenom" placeholder="Prénom" required>
     </div>
 
     <div>
-        <label for="age">Entrez votre Age: </label>
-        <input type="number" name="age" id="age" min="18" max="99" placeholder="Age" required>
+        <label for="nom">Entrez votre Nom: </label>
+        <input type="text" name="nom" id="nom" placeholder="Nom" required>
+    </div>
+
+    <div>
+        <label for="departement">Entrez votre Département: </label>
+        <input type="number" name="departement" id="departement" min="1" max="96" placeholder="Votre département" required>
     </div>
 
     <div>
         <label for="email">Entrez votre e-mail:</label>
         <input id="email" name="email" type="email">
-    </div>
-
-    <div>
-        <label for="password">Entrez votre mot de passe: </label>
-        <input type="password" name="password" id="password" minlenght="8" placeholder="Mot de passe" required>
     </div>
 
 <!--!! Select à modifier avec un foreach et des variables !!-->
