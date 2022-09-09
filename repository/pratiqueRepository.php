@@ -21,7 +21,21 @@ class PratiqueRepository extends Database implements IPratiqueRepository
 
     public function findAll(): array
     {
-        // TODO: Implement findAll() method.
+        $stmt = $this->db->prepare('SELECT * FROM pratique');
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $arr = $stmt->fetchAll();
+        if (!$arr) {
+            throw new PDOException("Could not find pratique in database");
+        }
+        $stmt = null;
+        $pratiques = [];
+        foreach ($arr as $pratique) {
+            $p = new Pratique($pratique['idUser'], $pratique['idSport']);
+            $p->setLevel($pratique['level']);
+            $pratiques[] = $p;
+        }
+        return $pratiques;
     }
 
     public function update(Pratique $Pratique)
