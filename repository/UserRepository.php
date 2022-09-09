@@ -2,7 +2,7 @@
 include_once 'IUserRepository.php';
 
 
-class UserRepository implements IUserRepository
+class UserRepository extends Database implements IUserRepository
 {
     private $connection;
 
@@ -13,12 +13,12 @@ class UserRepository implements IUserRepository
 
     public function add(User $user)
     {
-        $stmt = $this->connection->prepare("INSERT INTO user (name, email, password, sport) VALUES (:name, :email, :password, :sport)");
+        $stmt = $this->db->prepare("INSERT INTO user (name, email, password, numDpt) VALUES (:name, :email, :password, :numDpt)");
         $stmt->execute(array(
             'name' => $user->getName(),
             'email' => $user->getEmail(),
             'password' => $user->getPassword(),
-            'sport' => $user->getSport()
+            'numDpt' => $user->getNumDpt()
         ));
         $stmt = null;
     }
@@ -26,7 +26,7 @@ class UserRepository implements IUserRepository
     public function findAll(): array
     {
         $stmt = $this->connection->prepare("SELECT * FROM user");
-        return $bdd->query($stmt)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);
         $stmt = null;
     }
 
@@ -35,7 +35,7 @@ class UserRepository implements IUserRepository
         $stmt = $this->connection->prepare("SELECT * FROM user WHERE name = :name");
         $stmt->bindParam(':name', $name);
         $stmt->execute();
-        return $bdd->query($stmt)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->db->query($stmt)->fetchAll(PDO::FETCH_ASSOC);
         $stmt = null;
     }
     public function update(User $user)
