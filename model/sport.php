@@ -9,17 +9,12 @@ class Sport
 
     public function __construct($name)
     {
+        $this->id = uniqid();
         $this->name = $name;
     }
 
     public function getName(): string
     {
         return $this->name;
-    }
-
-    public function setUpId(): Sport
-    {
-        $this->id = uniqid();
-        return $this;
     }
 }
