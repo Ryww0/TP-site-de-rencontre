@@ -1,3 +1,7 @@
+<!--A rajouter: *Lien vers la page d’accueil.-->
+<!--            *Script vérifiant l’existence de saisies dans les zones de texte et les listes de sélection,-->
+<!--            enregistrant les données dans la base sportifs et affichant l’identifiant généré.-->
+
 <?php
 include '../view/header.php';
 ?>
@@ -40,8 +44,6 @@ include '../view/header.php';
                         <option value="<?= $sport->id ?>"> <?= $sport->name ?> </option>
                     <?php }
                 } ?>
-
-
             </select>
         </div>
 
