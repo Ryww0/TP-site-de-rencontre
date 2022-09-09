@@ -28,14 +28,10 @@ include '../view/header.php';
 
     <div
         <select name="sport" id="sport" >
+            <?php if (!empty $sports){
+                foreach ($sport as $port) { ?>
             <option value="" disabled selected hidden> Choisissez votre sport</option>
             <option value="tennis">Tennis</option>
-            <option value="golf">Golf</option>
-            <option value="football">Football</option>
-            <option value="badminton">Badminton</option>
-            <option value="course">Course</option>
-            <option value="rando">Randonnée</option>
-            <option value="arc">Tir à l'arc</option>
         </select>
     </div>
 
