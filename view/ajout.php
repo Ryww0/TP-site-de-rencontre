@@ -31,23 +31,17 @@ include '../view/header.php';
             <option value="golf">Golf</option>
             <option value="football">Football</option>
             <option value="badminton">Badminton</option>
-            <option value="course-a-pied">Course à pied</option>
-            <option value="randonnee">Randonnée</option>
-            <option value="tir-arc">Tir à l'arc</option>
+            <option value="course">Course</option>
+            <option value="rando">Randonnée</option>
+            <option value="arc">Tir à l'arc</option>
         </select>
     </div>
 
     <div>
-        <input type="submit" value="Vous inscrire">
+        <input type="submit" value="Inscription">
     </div>
 
 </form>
-
-
-
-
-
-
 
 <?php
 include '../view/footer.php';
