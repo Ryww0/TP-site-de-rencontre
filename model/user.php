@@ -4,7 +4,7 @@ namespace model;
 
 class User
 {
-    private int $id;
+    private string $id;
     private string $name;
     private string $email;
     private string $sport;
@@ -19,7 +19,7 @@ class User
         $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
