@@ -7,10 +7,10 @@ class User
     private string $id;
     private string $name;
     private string $email;
-    private string $sport;
+    private string $numDpt;
     private string $password;
 
-    public function __construct(string $name, string $email, string $sport, string $password)
+    public function __construct(string $name, string $email, string $numDpt, string $password)
     {
         $this->id = uniqid();
         $this->name = $name;
@@ -34,7 +34,7 @@ class User
         return $this->email;
     }
 
-    public function getSport(): string
+    public function getNumDpt(): string
     {
         return $this->sport;
     }
