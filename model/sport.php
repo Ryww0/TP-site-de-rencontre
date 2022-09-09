@@ -4,7 +4,7 @@ namespace model;
 
 class Sport
 {
-    private int $id;
+    private string $id;
     private string $name;
 
     public function __construct($name)
@@ -13,7 +13,7 @@ class Sport
         $this->name = $name;
     }
 
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
