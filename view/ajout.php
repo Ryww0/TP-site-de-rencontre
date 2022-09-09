@@ -24,20 +24,37 @@ include '../view/header.php';
         <input id="email" name="email" type="email">
     </div>
 
-<!--!! Select à modifier avec un foreach et des variables !!-->
 
-    <div
-        <select name="sport" id="sport" >
+
+
+    <form action="ajout-sport" method="post">
+        <div
+            <select name="sport" id="sport" >
+                <option value="" disabled selected hidden> Choisissez votre sport</option>
+
             <?php if (!empty $sports){
-                foreach ($sport as $port) { ?>
-            <option value="" disabled selected hidden> Choisissez votre sport</option>
-            <option value="tennis">Tennis</option>
-        </select>
-    </div>
+                    foreach ($sport as $port) { }?>
+                <option value="tennis">Tennis</option>
+            </select>
+        </div>
 
-    <div>
-        <input type="submit" value="Inscription">
-    </div>
+        <div>
+            <input type="submit" value="Nouveau Sport">
+        </div>
+    </form>
+
+
+
+    <select name="niveau" id="niveau">
+        <option value="" disabled selected hidden> Choisissez votre niveau:</option>
+
+        <option value="supporter">Supporter</option>
+        <option value="debutant">Débutant</option>
+        <option value="confirme">Confirmé</option>
+        <option value="pro">Pro</option>
+    </select>
+
+
 
 </form>
 
