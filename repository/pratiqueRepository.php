@@ -50,6 +50,17 @@ class PratiqueRepository extends Database implements IPratiqueRepository
 
     public function findByDesign(string $pratique): Pratique
     {
-        // TODO: Implement findByDesign() method.
+        $stmt = $this->db->prepare("SELECT * FROM pratique WHERE design = :design");
+        $stmt->bindValue(':design', $design);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $arr = $stmt->fetch();
+        if (!$arr) {
+            throw new PDOException("Could not find design in database");
+        }
+        $stmt = null;
+        $pratique = new Pratique($arr['idUser'], $arr['idSport']);
+        $pratique->setLevel($arr['id']);
+        return $pratique;
     }
 }
