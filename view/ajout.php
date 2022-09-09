@@ -10,8 +10,8 @@ include '../view/header.php';
     </div>
 
     <div>
-        <label for="name">Entrez votre Age: </label>
-        <input type="number" name="age" id="age" placeholder="Age" required>
+        <label for="age">Entrez votre Age: </label>
+        <input type="number" name="age" id="age" min="18" max="99" placeholder="Age" required>
     </div>
 
     <div>
@@ -24,8 +24,10 @@ include '../view/header.php';
         <input type="password" name="password" id="password" minlenght="8" placeholder="Mot de passe" required>
     </div>
 
-    <div>
-        <select name="sport" id="sport" >Choisissez un sport:
+<!--!! Select à modifier avec un foreach et des variables !!-->
+
+    <div
+        <select name="sport" id="sport" >
             <option value="" disabled selected hidden> Choisissez votre sport</option>
             <option value="tennis">Tennis</option>
             <option value="golf">Golf</option>
