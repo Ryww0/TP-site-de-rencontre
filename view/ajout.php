@@ -18,9 +18,10 @@ include '../view/header.php';
 
         <div>
             <label for="departement">Entrez votre Département: </label>
-            <input type="number" name="departement" id="departement" min="1" max="96" placeholder="Votre département"
+            <input type="number" name="departement" id="departement" min="01" max="95" minlength="2" maxlength="3" placeholder="xx"
                    required>
         </div>
+<!--        Comment gérer le max avec les dom tom-->
 
         <div>
             <label for="email">Entrez votre e-mail:</label>
