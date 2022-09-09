@@ -38,14 +38,23 @@ class PratiqueRepository extends Database implements IPratiqueRepository
         return $pratiques;
     }
 
-    public function update(Pratique $Pratique)
+    public function update(Pratique $pratique)
     {
-        // TODO: Implement update() method.
+        $stmt = $this->db->prepare("UPDATE pratique SET idSport = :idSport, idUser = :idUser WHERE level = :level");
+        $stmt->bindValue(':idSport', $pratique->getIdSport());
+        $stmt->bindValue(':idUser', $pratique->getIdUser());
+        $stmt->bindValue(':level', $pratique->getLevel());
+        $stmt->execute();
+        $stmt = null;
     }
 
-    public function remove(Pratique $Pratique)
+    public function remove(Pratique $pratique)
     {
-        // TODO: Implement remove() method.
+        $stmt = $this->db->prepare("DELETE FROM sport WHERE idUser = :idUser && idSport = :idSport");
+        $stmt->bindValue(':idUser', $pratique->getIdUser());
+        $stmt->bindValue(':idSport', $pratique->getIdSport());
+        $stmt->execute();
+        $stmt = null;
     }
 
     public function findByDesign(string $pratique): Pratique
