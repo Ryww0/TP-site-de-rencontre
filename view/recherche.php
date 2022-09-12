@@ -5,8 +5,7 @@ include '../view/header.php';
 
 <form action="recherche.php" method="post">
 
-
-
+<!--    Liste des sports   -->
     <label for="sport-select">Choisissez un sport:</label>
 
     <div>
@@ -17,7 +16,7 @@ include '../view/header.php';
 
     <br><br>
 
-
+<!--    Liste des niveaux   -->
     <label for="niveau-select">Choisissez le niveau:</label>
     <div>
             <select name="niveau" id="niveau">
@@ -27,6 +26,8 @@ include '../view/header.php';
                 <option value="pro">Pro</option>
             </select>
     </div>
+
+
 
 
 <!--    Reset/Submit   -->
@@ -43,7 +44,7 @@ include '../view/header.php';
 
 
 
-
+<a href= "./Accueil"></a>
 
 
 <?php
