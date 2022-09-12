@@ -10,11 +10,11 @@ use PDOException;
 
 class PratiqueRepository extends Database implements IPratiqueRepository
 {
-    public function addPratique(Pratique $pratique)
+    public function add(Pratique $pratique)
     {
         $stmt = $this->db->prepare("INSERT INTO pratique (idUser, idSport, level) VALUES (:idUser, :idSport, :level)");
-        $stmt->bindValue(':idUser', $pratique->getIdUser());
-        $stmt->bindValue(':idSport', $pratique->getIdSport());
+        $stmt->bindValue(':idUser', $pratique->getUserId());
+        $stmt->bindValue(':idSport', $pratique->getSportId());
         $stmt->bindValue(':level', $pratique->getLevel());
         $stmt->execute();
         $stmt = null;
@@ -42,8 +42,8 @@ class PratiqueRepository extends Database implements IPratiqueRepository
     public function update(Pratique $pratique)
     {
         $stmt = $this->db->prepare("UPDATE pratique SET idSport = :idSport, idUser = :idUser WHERE level = :level");
-        $stmt->bindValue(':idSport', $pratique->getIdSport());
-        $stmt->bindValue(':idUser', $pratique->getIdUser());
+        $stmt->bindValue(':idSport', $pratique->getSportId());
+        $stmt->bindValue(':idUser', $pratique->getUserId());
         $stmt->bindValue(':level', $pratique->getLevel());
         $stmt->execute();
         $stmt = null;
@@ -52,8 +52,8 @@ class PratiqueRepository extends Database implements IPratiqueRepository
     public function remove(Pratique $pratique)
     {
         $stmt = $this->db->prepare("DELETE FROM sport WHERE idUser = :idUser && idSport = :idSport");
-        $stmt->bindValue(':idUser', $pratique->getIdUser());
-        $stmt->bindValue(':idSport', $pratique->getIdSport());
+        $stmt->bindValue(':idUser', $pratique->getUserId());
+        $stmt->bindValue(':idSport', $pratique->getSportId());
         $stmt->execute();
         $stmt = null;
     }
@@ -61,7 +61,7 @@ class PratiqueRepository extends Database implements IPratiqueRepository
     public function findByDesign(string $pratique): Pratique
     {
         $stmt = $this->db->prepare("SELECT * FROM pratique WHERE design = :design");
-        $stmt->bindValue(':design', $design);
+        $stmt->bindValue(':design', $pratique);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $arr = $stmt->fetch();

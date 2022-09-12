@@ -3,7 +3,7 @@
 namespace repository;
 
 // I dont know file path for User.php
-use App\Entity\User;
+use model\User;
 
 interface IUserRepository
 {
