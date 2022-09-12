@@ -15,7 +15,7 @@ class User
         $this->id = uniqid();
         $this->name = $name;
         $this->email = $email;
-        $this->sport = $sport;
+        $this->numDpt = $numDpt;
         $this->password = password_hash($password, PASSWORD_DEFAULT);
     }
 

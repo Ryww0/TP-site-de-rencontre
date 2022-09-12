@@ -2,21 +2,22 @@
 
 namespace repository;
 
-use model/Pratique;
+use model\Pratique;
+use repository\IPratiqueRepository;
 use service\Database;
 use PDO;
 use PDOException;
 
 class PratiqueRepository extends Database implements IPratiqueRepository
 {
-    public function add(Pratique $pratique)
+    public function addPratique(Pratique $pratique)
     {
         $stmt = $this->db->prepare("INSERT INTO pratique (idUser, idSport, level) VALUES (:idUser, :idSport, :level)");
         $stmt->bindValue(':idUser', $pratique->getIdUser());
         $stmt->bindValue(':idSport', $pratique->getIdSport());
         $stmt->bindValue(':level', $pratique->getLevel());
         $stmt->execute();
-        $stmt = null;    
+        $stmt = null;
     }
 
     public function findAll(): array

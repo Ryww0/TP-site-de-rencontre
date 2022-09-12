@@ -1,16 +1,9 @@
 <?php
-include_once 'IUserRepository.php';
 
+namespace repository;
 
 class UserRepository extends Database implements IUserRepository
 {
-    private $connection;
-
-    public function __construct(PDO $connection)
-    {
-        $this->connection = $connection;
-    }
-
     public function add(User $user)
     {
         $stmt = $this->db->prepare("INSERT INTO user (name, email, password, numDpt) VALUES (:name, :email, :password, :numDpt)");
@@ -55,5 +48,4 @@ class UserRepository extends Database implements IUserRepository
         $stmt->execute();
         $stmt = null;
     }
-
 }

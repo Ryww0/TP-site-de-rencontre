@@ -2,6 +2,8 @@
 
 namespace repository;
 
+use model\Pratique;
+
 interface IPratiqueRepository
 {
     public function addPratique(Pratique $pratique);

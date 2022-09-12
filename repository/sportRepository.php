@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace repository;
 
 use App\Entity\Sport;
 use App\Service\Database;
@@ -75,4 +75,3 @@ class SportRepository extends Database implements ISportRepository
         return $sport;
     }
 }
-
