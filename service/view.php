@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Service;
+namespace service;
+
 
 trait View
 {
