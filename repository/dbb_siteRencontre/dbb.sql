@@ -33,4 +33,4 @@ CREATE TABLE
     Sport (
         idSport INT (11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
         nameSport VARCHAR (255) NOT NULL,
-    )
+    );
