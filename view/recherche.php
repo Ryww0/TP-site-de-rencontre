@@ -13,8 +13,11 @@ include '../view/header.php';
             <option value=  <?php $sport ?>   ></option>
         </select>
     </div>
-
     <br><br>
+
+
+
+
 
 <!--    Liste des niveaux   -->
     <label for="niveau-select">Choisissez le niveau:</label>
@@ -26,7 +29,7 @@ include '../view/header.php';
                 <option value="pro">Pro</option>
             </select>
     </div>
-
+    <br><br>
 
 
 
