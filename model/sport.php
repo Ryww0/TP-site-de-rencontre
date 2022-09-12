@@ -13,6 +13,11 @@ class Sport
         $this->name = $name;
     }
 
+    public function setId(string $id): void
+    {
+        $this->id = $id;
+    }
+
     public function getId(): string
     {
         return $this->id;
@@ -21,5 +26,10 @@ class Sport
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function setName(string $name)
+    {
+        $this->name = $name;
     }
 }

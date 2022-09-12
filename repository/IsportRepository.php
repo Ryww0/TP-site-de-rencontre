@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Repository;
+namespace repository;
 
-// Il faut changer //
-use Entity\Sport;
+use model\Sport;
 
 interface ISportRepository
 {
     public function add(Sport $sport);
 
-    public function findAll() : array;
+    public function findAll(): array;
 
     public function findBySport(string $sport): Sport;
 

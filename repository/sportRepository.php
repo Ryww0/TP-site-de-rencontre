@@ -2,8 +2,14 @@
 
 namespace repository;
 
-use App\Entity\Sport;
-use App\Service\Database;
+include('./service/Database.php');
+include('./repository/ISportRepository.php');
+
+
+
+use model\Sport;
+use service\Database;
+use repository\ISportRepository;
 use PDO;
 use PDOException;
 
@@ -22,11 +28,17 @@ class SportRepository extends Database implements ISportRepository
         $stmt = $this->db->prepare("SELECT * FROM sport ");
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        return $stmt->fetchAll();
+        $sports = $stmt->fetchAll();
+        foreach ($sports as $sport) {
+            $s = new Sport($sport['name']);
+            $s->setId($sport['id']);
+            $ss[] = $s;
+        }
+        return $ss;
         $stmt = null;
     }
 
-    public function findBySport(string $sport): string
+    public function findBySport(string $sport): Sport
     {
         $stmt = $this->db->prepare("SELECT * FROM sport WHERE design = :name");
         $stmt->bindValue(':name', $sport);
@@ -38,7 +50,7 @@ class SportRepository extends Database implements ISportRepository
         }
         $stmt = null;
         $sport = new Sport($arr['name']);
-        $sport->setId($arr['id']);
+        $sport->setName($arr['id']);
         return $sport;
     }
 
@@ -71,7 +83,7 @@ class SportRepository extends Database implements ISportRepository
         }
         $stmt = null;
         $sport = new Sport($arr['name']);
-        $sport->setId($arr['id']);
+        $sport->setName($arr['id']);
         return $sport;
     }
 }
