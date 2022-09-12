@@ -3,16 +3,11 @@
 require_once 'config/config.php';
 require_once 'Autoloader.php';
 
-use App\Autoloader;
-use App\Controller\Back\SportController;
-use App\Controller\Front\HomeController;
-use App\Exception\RouterException;
-use App\Repository\SportRepository;
-use App\Repository\UserRepository;
-use App\Security\Auth;
-use App\Service\Database;
-use App\Service\Router;
-use App\Service\Session;
+use aservice\autoloader;
+use repository\sportRepository;
+use repository\userRepository;
+use service\Database;
+use service\router;
 
 Autoloader::$folderList =
     [
