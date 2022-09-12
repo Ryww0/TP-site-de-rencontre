@@ -58,9 +58,9 @@ class UserController
             $val = new Validation;
             $val->name('design')->value(Input::get('design'))->pattern('alpha')->required();   // Je comprend pas cette ligne
             if ($val->isSuccess()) {
-                $sport = $this->userRepository->findById($params);
-                $sport->setDesign(Input::get('design'));
-                $this->userRepository->update($sport);
+                $user = $this->userRepository->findById($params);
+                $user->setDesign(Input::get('design'));  // Il faut changer 'design'
+                $this->userRepository->update($user);
                 Redirect::to('admin/user');
             }
         }
