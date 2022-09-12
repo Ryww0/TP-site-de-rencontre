@@ -43,9 +43,11 @@ include '../view/header.php';
 
 
 
+<!--    TODO: Améliorer les liens qui suivent !   -->
 
-<a href= "./Accueil"></a>
+<a href="./accueil">Retour Accueil</a>
 
+<a href="../view/partials/ajout.php">Retour Inscription</a>
 
 <?php
 include '../view/footer.php';
