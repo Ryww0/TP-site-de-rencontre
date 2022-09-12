@@ -25,13 +25,25 @@ include '../view/header.php';
     <div>
             <select name="niveau" id="niveau">
                 <option value="supporter">Supporter</option>
-                <option value="debutant">DÃ©butant</option>
-                <option value="confirme">ConfirmÃ©</option>
+                <option value="debutant">Débutant</option>
+                <option value="confirme">Confirmé</option>
                 <option value="pro">Pro</option>
             </select>
     </div>
     <br><br>
 
+
+    <!--    Liste des departement   -->
+    <div>
+        <select name="departement" id="departement">
+        <option value="" disabled selected hidden> Choisissez votre département</option>
+            <?php if (isset($departement) && (!empty($departement))) {
+                foreach ($departements as $departement) { ?>
+                    <option value="<?= $departement->id ?>"> <?= $departement->name ?> </option>
+                <?php }
+            } ?>
+        </select>
+    </div>
 
 
 <!--    Reset/Submit   -->
