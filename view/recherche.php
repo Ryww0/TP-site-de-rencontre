@@ -10,14 +10,15 @@ include '../view/header.php';
 
     <div>
         <select name="sport" id="sport">
-            <option value=  <?php $sport ?>   ></option>
+        <option value="" disabled selected hidden> Choisissez votre sport</option>
+            <?php if (isset($sports) && (!empty($sports))) {
+                foreach ($sports as $sport) { ?>
+                    <option value="<?= $sport->id ?>"> <?= $sport->name ?> </option>
+                <?php }
+            } ?>
         </select>
     </div>
     <br><br>
-
-
-
-
 
 <!--    Liste des niveaux   -->
     <label for="niveau-select">Choisissez le niveau:</label>
