@@ -2,6 +2,7 @@
 
 namespace service;
 
+
 trait View
 {
     function render($title = '', $file, $variables = [])
