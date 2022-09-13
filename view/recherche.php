@@ -10,7 +10,7 @@ include '../view/header.php';
 
     <div>
         <select name="sport" id="sport">
-        <option value="" disabled selected hidden> Choisissez votre sport</option>
+        <option value="" disabled selected hidden> Choisissez votre sport :</option>
             <?php if (isset($sports) && (!empty($sports))) {
                 foreach ($sports as $sport) { ?>
                     <option value="<?= $sport->id ?>"> <?= $sport->name ?> </option>
@@ -36,7 +36,7 @@ include '../view/header.php';
     <!--    Liste des departement   -->
     <div>
         <select name="departement" id="departement">
-        <option value="" disabled selected hidden> Choisissez votre département</option>
+        <option value="" disabled selected hidden> Choisissez votre département :</option>
             <?php if (isset($departement) && (!empty($departement))) {
                 foreach ($departements as $departement) { ?>
                     <option value="<?= $departement->id ?>"> <?= $departement->name ?> </option>
@@ -59,7 +59,7 @@ include '../view/header.php';
 
 
 
-<!--    TODO: Améliorer les liens qui suivent !   -->
+<!--    TODO: Améliorer les liens qui suivent :   -->
 
 <a href="./accueil">Retour Accueil</a>
 
