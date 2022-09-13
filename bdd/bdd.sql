@@ -27,7 +27,7 @@ CREATE TABLE
     Pratique(
         idUser INT(11) UNSIGNED NOT NULL,
         idSport INT(11) UNSIGNED NOT NULL,
-        level INT(11) UNSIGNED NOT NULL,
+        level VARCHAR(255) NOT NULL,
         CONSTRAINT fk_Pratique_User FOREIGN KEY (idUser) REFERENCES User(idUser),
         CONSTRAINT fk_Sport_User FOREIGN KEY (idSport) REFERENCES User(idSport)
     );
@@ -77,4 +77,8 @@ INSERT INTO
 VALUES ('01', 'Ain'), ('69', 'Rhone'), ('38', 'Isère'), ('39', 'Jura'), ('29', 'Finistere');
 
 INSERT INTO Sport (nameSport)
-VALUES ('football'), ('basketball'), ('tennis'), ('aviron');
+VALUES ('football'), ('basketball'), ('tennis'), ('aqua-poney');
+
+INSERT INTO
+    Pratique (idUser, idSport, level)
+VALUES (0, 3, 'pro'), (1, 0, 'debutant'), (2, 1, 'supporter'), (3, 2, 'confirme'), (4, 0, 'supporter');
