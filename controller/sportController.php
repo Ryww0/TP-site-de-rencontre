@@ -22,10 +22,9 @@ class SportController
 
     public function invoke()
     {
-        // return $this->sportRepository->findAll();
         return $this->render(
             SITE_NAME . ' - Sport',
-            'back/pages/sport/index.php',   // Il faut changer cette ligne
+            'view/sport/index.php',
             [
                 'sports' => $this->sportRepository->findAll()
             ]
