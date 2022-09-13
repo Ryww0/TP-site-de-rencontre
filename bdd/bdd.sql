@@ -61,12 +61,12 @@ VALUES (
         '98765',
         '38'
     ), (
-        'PtiCulEnFeu69',
-        'PtiCul@outlook.fr',
+        'Ginette',
+        'Gigi@outlook.fr',
         '543210',
         '69'
     ), (
-        'Pauline2quilatienne..',
+        'Pauline',
         'Pauline@gmail.com',
         '02468',
         '69'
