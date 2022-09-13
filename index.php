@@ -5,11 +5,13 @@ include('./config.php');
 
 include('./controller/sportController.php');
 include('./repository/sportRepository.php');
+// include('./service/view.php');
 // include('./repository/IsportRepository.php');
 include('./model/sport.php');
 
 use App\Controller\Back\SportController;
 use repository\SportRepository;
+use service\View;
 
 
 $test = new SportRepository();

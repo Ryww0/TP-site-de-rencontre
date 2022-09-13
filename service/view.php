@@ -9,7 +9,7 @@ trait View
     {
         $content = $this->renderContent($file, $variables);
         ob_start();
-        include APP_ROOT . '/templates/front/base.php';
+        include APP_ROOT . './view/partials/head.php';
         return ob_get_clean();
     }
 

@@ -2,12 +2,16 @@
 
 namespace App\Controller\Back;
 
+include('./service/view.php');
+
 use model\Sport;
 use repository\ISportRepository;
 use repository\SportRepository;
+use service\View;
 
 class SportController
 {
+    use View;
 
     private ISportRepository $sportRepository;
 
@@ -18,13 +22,14 @@ class SportController
 
     public function invoke()
     {
-        return $this->sportRepository->findAll();
-        // return $this->render(
-        //     SITE_NAME . ' - Sport',
-        //     'back/pages/sport/index.php',   // Il faut changer cette ligne
-        //     [
-        //         'sports' => $this->sportRepository->findAll()
-        //     ]);
+        // return $this->sportRepository->findAll();
+        return $this->render(
+            SITE_NAME . ' - Sport',
+            'back/pages/sport/index.php',   // Il faut changer cette ligne
+            [
+                'sports' => $this->sportRepository->findAll()
+            ]
+        );
     }
 
     public function getSportById($params)
